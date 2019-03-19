@@ -9,7 +9,7 @@
 <body style="background-color: #E8F5FD">
 <h2 style="color: navy; margin-left: 50px; margin-top: 30px;">Cover Letter Generator</h2>
 <div>
-<form style="margin-left: 50px; margin-top: 30px;">
+<div style="margin-left: 50px; margin-top: 30px;">
   <div class="form-group">
     <label for="exampleInputEmail1">Position</label>
     <input class="form-control" id="position" aria-describedby="emailHelp" placeholder="Position" style="width: 350px;">
@@ -38,8 +38,8 @@
     Quality Assurance Cover Letter
   </label>
 </div>
-  <button type="submit" class="btn btn-primary" style="margin-top: 20px; width: 100px;" id="create">Generate</button>
-</form>
+  <button class="btn btn-primary" style="margin-top: 20px; width: 100px;" id="create">Generate</button>
+</div>
 
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/docxtemplater/3.9.1/docxtemplater.js"></script>
@@ -53,11 +53,13 @@
     }
 	document.getElementById("create").onclick = function generate() {
 		var fileURL = ""
+		fileURL = document.URL
+		fileURL = fileURL.slice(0, document.URL.lastIndexOf("/"))
 		if (document.getElementById("devCL").checked){
-			fileURL = "http://192.168.0.20:8080/Software%20Dev%20CL.docx"
+			fileURL = `${fileURL}/Software%20Dev%20CL.docx`
 		
 		}else{
-			fileURL = "http://192.168.0.20:8080/QA%20Template%20CL.docx"
+			fileURL = `${fileURL}/QA%20Template%20CL.docx`
 		
 		}
         loadFile(fileURL,function(error,content){
