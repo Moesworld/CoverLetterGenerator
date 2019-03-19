@@ -8,5 +8,5 @@ How it works (first time):
 
 After installing:
 3- Go to the directory that has all these files and run the command: http-server
-4- Access clgen.html by using this link "http://192.168.0.22:8080/clgen.html"
+4- Access clgen.html by using this link "{server}/clgen.html" where the server is the output from the previous command
 5- You can change the fields in the script inside clgen.html and inside word, for more info read docxtemplater.js documentation
